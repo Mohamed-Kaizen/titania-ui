@@ -1,0 +1,249 @@
+:root {
+	--accent-hsl: 222, 71%, 44%;
+	--overlay-blurple: hsla(var(--accent-hsl), 0.2);
+    --overlay-purple: #9e33d07b 20%;
+    --sl-color-text-accent: #3460c6;
+    --sl-color-text-accent-darker: #1a51d3;
+    --color-bg-elevation: hsl(224, 10%, 13%);
+}
+
+:root[data-theme='light'] {
+	--accent-hsl: 255, 85%, 65%;
+    --overlay-blurple: hsla(var(--accent-hsl), 0.3);
+    --overlay-purple: #357de1c0 20%;
+    --sl-color-text-accent: #2458d1;
+    --sl-color-text-accent-darker: #1947b0;
+    --color-bg-elevation: hsl(0, 0%, 93%);
+}
+
+[data-has-hero] .page {
+	background:
+		radial-gradient(var(--overlay-purple), var(--overlay-blurple), transparent 65%) no-repeat 40rem -15rem /
+			140rem 80rem;
+}
+
+[data-has-hero] header {
+	border-bottom: 1px solid transparent;
+	background-color: transparent;
+	-webkit-backdrop-filter: blur(16px);
+	backdrop-filter: blur(16px);
+}
+
+[data-has-hero] header site-search > button {
+	display: none !important;
+}
+
+[data-has-hero] .hero img {
+    position: absolute;
+    overflow: hidden;
+    top: 15vh;
+    width: 30%;
+    aspect-ratio: 16-9;
+    animation: bounce 4s ease-in-out infinite;
+
+}
+
+[data-has-hero] {
+    overflow-x: hidden;
+}
+
+[data-has-hero] .hero > div.sl-flex{
+    align-self: flex-start;
+}
+
+[data-has-hero] .sl-container {
+    margin: 0 auto;
+    max-width: 90vw;
+}
+
+[data-has-hero] .hero .action {
+    border-radius: 24px;
+    transition: background-color ease-in-out 0.25s;
+}
+
+[data-has-hero] .hero .action.primary {
+    color: #fefefe;
+    font-weight: bold;
+}
+
+[data-has-hero] .hero .action.primary:hover {
+    background: var(--sl-color-text-accent-darker);
+}
+
+[data-has-hero] .hero .action.minimal {
+    border: solid 1px var(--sl-color-text-accent);
+    padding: 1rem 1.25rem;
+}
+
+[data-has-hero] .hero .action.minimal:hover {
+    background: var(--sl-color-text-accent);
+    color: #fefefe;
+}
+
+[data-has-hero] .hero .actions {
+    gap: 1.25rem;
+}
+
+[data-has-hero] .hero .hero-gradient-text {
+    background: radial-gradient(circle at top left, hsl(296, 100%, 50%) 0%, transparent 50%),
+                radial-gradient(circle at center, rgb(113, 147, 233) 0%, transparent 100%),
+                radial-gradient(circle at bottom right, rgb(0, 68, 255) 0%, transparent 50%);
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+[data-has-hero] .card {
+    border-radius: 12px;
+    position: relative;
+    background: radial-gradient(300px circle at top left, rgba(85, 44, 190, 0.081) 20%, transparent 100%),
+                radial-gradient(300px circle at bottom right, rgba(44, 102, 190, 0.09) 20%, transparent 100%);
+}
+
+[data-has-hero] .card::before {
+    content: "";
+    position: absolute;
+    inset: 0px;
+    border-radius: inherit;
+    transition: opacity 400ms ease 0s;
+    will-change: background, opacity;
+    background: radial-gradient(
+        800px circle at var(--mouse-x) var(--mouse-y),
+        rgba(62, 85, 167, 0.212),
+        transparent 40%
+    );
+    opacity: 0;
+    z-index: 2;
+    pointer-events: none;
+}
+
+[data-has-hero] .card:hover::before {
+    opacity: 1;
+}
+
+[data-has-hero] .star-text {
+    margin-top: 8px !important;
+    font-size: 20px;
+    font-weight: 500;
+    letter-spacing: wider;
+}
+
+.card-grid.stagger {
+    margin-bottom: 64px;
+}
+
+.star-section {
+    background-color: var(--color-bg-elevation);
+    padding: 64px 12px;
+    margin: 64px 0;
+    text-align: center;
+}
+
+.star-section > p {
+    font-size: 18px;
+    margin-bottom: 16px;
+}
+
+[data-has-title] .card:hover::before {
+    opacity: 1;
+    animation: bounce 2s ease-in-out infinite;
+}
+a.primary{
+    color: white !important;
+    background: radial-gradient(circle at top left, hsl(296, 100%, 50%) 0%, transparent 50%),
+                radial-gradient(circle at center, rgb(113, 147, 233) 0%, transparent 100%),
+                radial-gradient(circle at bottom right, rgb(0, 68, 255) 0%, transparent 50%) !important;
+
+    border: none;
+                
+}
+
+#_top {
+    animation: bounce 2s ease-in-out infinite;
+}
+
+.star-section > a {
+    display: inline-block;
+    padding: 12px 20px;
+    background-color: var(--sl-color-text-accent);
+    border-radius: 24px;
+    color: #fefefe;
+    font-weight: bold;
+    transition: background-color ease-in-out 0.25s;
+    text-decoration: none;
+}
+
+.star-section > a:hover {
+    background: var(--sl-color-text-accent-darker);
+}
+
+.titania-cards-row {
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    grid-gap: 20px;
+}
+
+.titania-info-card {
+    padding: 24px;
+    background: var(--color-bg-elevation);
+    border: 1px solid var(--sl-color-gray-5);
+    margin: 0 !important;
+    border-radius: 12px;
+    color: var(--sl-color-gray-1);
+}
+
+.titania-info-card > span {
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--sl-color-white);
+}
+
+[data-has-hero] footer {
+    margin-top: 80px !important;
+}
+
+@media (max-width: 50rem) {
+	[data-has-hero] .hero img {
+        display: none;
+        aspect-ratio: 1.74;
+        width: 10px;
+    }
+
+    [data-has-hero] .header .right-group {
+        display: flex !important;
+    }
+}
+
+@media (min-width: 1700px) {
+    [data-has-hero] .hero img {
+        position: absolute;
+        overflow: hidden;
+        top: -4vh;
+        right: -5vw;
+        width: 800px;
+    }
+}
+
+@media (min-width: 2400px) {
+    [data-has-hero] .hero img {
+        position: absolute;
+        overflow: hidden;
+        top: 6vh;
+        right: 0vw;
+        width: 1200px;
+    }
+}
+
+@keyframes bounce {
+0% {
+    transform: translateY(0);
+}
+50% {
+    transform: translateY(-20px);
+}
+100% {
+    transform: translateY(0);
+}
+}
